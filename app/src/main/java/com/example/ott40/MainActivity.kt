@@ -6,7 +6,9 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.*
 import kotlin.concurrent.fixedRateTimer
+import kotlin.coroutines.coroutineContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,10 +23,67 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         prepareImageview(0)
+        prepare_avd()
+        actUpon()
+    }
 
+    private fun actUpon() {
+        prepareImageview(1)
+        GlobalScope.launch { draw_image1() }
+        GlobalScope.launch { draw_image2() }
+        GlobalScope.launch { draw_image3() }
+        GlobalScope.launch { draw_image4() }
 
 
     }
+
+    private suspend fun draw_image1() {
+        avd1.start()
+    }
+
+    private suspend fun draw_image2() {
+        delay(1000)
+        avd2.start()
+    }
+    private suspend fun draw_image3() {
+        delay(2000)
+        avd3.start()
+    }
+    private suspend fun draw_image4() {
+        delay(3000)
+        avd4.start()
+    }
+
+
+
+    fun click_coroutine(view: View) {
+        prepare_avd()
+       // prepareImageview(1)
+        runBlocking {
+            launch {
+                delay(10)
+                imageView1.visibility = View.VISIBLE
+                avd1.start()
+                delay(2000)
+                imageView2.visibility = View.VISIBLE
+                avd2.start()
+            }
+            GlobalScope.launch(Dispatchers.Main) {
+                delay(4000)
+                imageView1.visibility = View.GONE
+                delay(1000)
+                imageView2.visibility = View.GONE
+
+            }
+
+
+
+
+
+        }
+
+    }
+
 
     fun click_AllLetter(view: View) {
         prepare_avd()
@@ -33,25 +92,26 @@ class MainActivity : AppCompatActivity() {
         fixedRateTimer("timer", false, 0, 2000) {
             counter++
             operate_Animation(counter)
-              Log.d("clima","counter=$counter")
+            Log.d("clima", "counter=$counter")
             if (counter >= 5) cancel()
         }
 
 
     }
-private fun prepareImageview(ind:Int){
-    if (ind==0){
-        imageView1.visibility=View.INVISIBLE
-        imageView2.visibility=View.INVISIBLE
-        imageView3.visibility=View.INVISIBLE
-        imageView4.visibility=View.INVISIBLE
-    }else{
-        imageView1.visibility=View.VISIBLE
-       imageView2.visibility=View.VISIBLE
-        imageView3.visibility=View.VISIBLE
-        imageView4.visibility=View.VISIBLE
+
+    private fun prepareImageview(ind: Int) {
+        if (ind == 0) {
+            imageView1.visibility = View.INVISIBLE
+            imageView2.visibility = View.INVISIBLE
+            imageView3.visibility = View.INVISIBLE
+            imageView4.visibility = View.INVISIBLE
+        } else {
+            imageView1.visibility = View.VISIBLE
+            imageView2.visibility = View.VISIBLE
+            imageView3.visibility = View.VISIBLE
+            imageView4.visibility = View.VISIBLE
+        }
     }
-}
 
     private fun prepare_avd() {
 
@@ -68,7 +128,7 @@ private fun prepareImageview(ind:Int){
 
     private fun operate_Animation(counter: Int) {
         Log.d("clima", "counter=$counter")
-       // avd = AnimatedVectorDrawable()
+        // avd = AnimatedVectorDrawable()
         when (counter) {
             1 -> avd1.start()
 
@@ -78,7 +138,6 @@ private fun prepareImageview(ind:Int){
             3 -> avd3.start()
 
             4 -> avd4.start()
-
 
 
         }
@@ -114,7 +173,6 @@ private fun prepareImageview(ind:Int){
         avd = imageView4.drawable as AnimatedVectorDrawable
         avd.start()
     }
-
 
 
 }
