@@ -8,7 +8,54 @@
     android:keepScreenOn="true"
     tools:context=".MainActivity">
 
-    <ImageView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/word1Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="52dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="107dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="147dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+   <!-- <ImageView
         android:id="@+id/imageView1"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -16,9 +63,9 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:srcCompat="@mipmap/ic_launcher_round" />-->
 
-    <ImageView
+  <!--  <ImageView
         android:id="@+id/imageView2"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -26,9 +73,9 @@
         android:layout_marginEnd="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:srcCompat="@mipmap/ic_launcher_round" />-->
 
-    <ImageView
+   <!-- <ImageView
         android:id="@+id/imageView3"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -36,9 +83,9 @@
         android:layout_marginEnd="115dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:srcCompat="@mipmap/ic_launcher_round" />-->
 
-    <ImageView
+  <!--  <ImageView
         android:id="@+id/imageView4"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -46,7 +93,7 @@
         android:layout_marginEnd="155dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:srcCompat="@mipmap/ic_launcher_round" />-->
 
     <Button
         android:id="@+id/allefBtn"
@@ -115,7 +162,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/button"
         app:layout_constraintStart_toStartOf="@+id/betBtn" />
 
-    <ImageView
+   <!-- <ImageView
         android:id="@+id/imageView_coroutine"
         android:visibility="invisible"
         android:layout_width="100dp"
@@ -124,7 +171,127 @@
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/ic_launcher_background" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--
+
+<ImageView
+android:id="@+id/imageView1"
+android:layout_width="100dp"
+android:layout_height="100dp"
+android:layout_marginTop="56dp"
+android:layout_marginEnd="8dp"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:srcCompat="@mipmap/ic_launcher_round" />
+
+<ImageView
+android:id="@+id/imageView2"
+android:layout_width="100dp"
+android:layout_height="100dp"
+android:layout_marginTop="56dp"
+android:layout_marginEnd="60dp"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:srcCompat="@mipmap/ic_launcher_round" />
+
+<ImageView
+android:id="@+id/imageView3"
+android:layout_width="100dp"
+android:layout_height="100dp"
+android:layout_marginTop="56dp"
+android:layout_marginEnd="115dp"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:srcCompat="@mipmap/ic_launcher_round" />
+
+<ImageView
+android:id="@+id/imageView4"
+android:layout_width="100dp"
+android:layout_height="100dp"
+android:layout_marginTop="56dp"
+android:layout_marginEnd="155dp"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:srcCompat="@mipmap/ic_launcher_round" />
+
+<Button
+android:id="@+id/allefBtn"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginBottom="16dp"
+android:onClick="click_Alef"
+android:text="Aleff"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.5"
+app:layout_constraintStart_toEndOf="@+id/betBtn" />
+
+<Button
+android:id="@+id/betBtn"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginBottom="16dp"
+android:onClick="click_Bet"
+android:text="Bet"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toStartOf="@+id/allefBtn"
+app:layout_constraintHorizontal_bias="0.5"
+app:layout_constraintStart_toEndOf="@+id/betGimel" />
+
+<Button
+android:id="@+id/betGimel"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginBottom="16dp"
+android:onClick="click_Gimel"
+android:text="Gimel"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toStartOf="@+id/betBtn"
+app:layout_constraintHorizontal_bias="0.5"
+app:layout_constraintStart_toEndOf="@+id/betDalet" />
+
+<Button
+android:id="@+id/betDalet"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginBottom="16dp"
+android:onClick="click_Dalet"
+android:text="Daled"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toStartOf="@+id/betGimel"
+app:layout_constraintHorizontal_bias="0.5"
+app:layout_constraintStart_toStartOf="parent" />
+
+<Button
+android:id="@+id/button"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginBottom="8dp"
+android:onClick="click_AllLetter"
+android:text="All"
+app:layout_constraintBottom_toTopOf="@+id/allefBtn"
+app:layout_constraintStart_toStartOf="@+id/allefBtn" />
+
+<Button
+android:id="@+id/coroutinBtn"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:onClick="click_coroutine"
+android:text="Corout"
+app:layout_constraintBottom_toBottomOf="@+id/button"
+app:layout_constraintStart_toStartOf="@+id/betBtn" />
+
+<ImageView
+android:id="@+id/imageView_coroutine"
+android:visibility="invisible"
+android:layout_width="100dp"
+android:layout_height="100dp"
+android:layout_marginTop="200dp"
+android:layout_marginEnd="32dp"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:srcCompat="@drawable/ic_launcher_background" />-->
